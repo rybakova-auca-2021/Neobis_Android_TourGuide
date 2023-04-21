@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#75B4FE</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="toolBarText">#003C68</color>
+    <color name="nameOfPlace">#2A8CFF</color>
+    <color name="grey">#BABABA</color>
+    <color name="address_color">#6B6B6C</color>
+</resources>
