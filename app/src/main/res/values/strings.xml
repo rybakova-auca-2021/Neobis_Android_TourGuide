@@ -74,7 +74,52 @@
     <string name="address_of_place">Address of place</string>
     <string name="open_time">Open time</string>
     <string name="distance">distance</string>
-    <string name="hrllo">hrllo</string>
 
+    <string name="dasmia_name">Dasmia</string>
+    <string name="dasmia_address"> ул. Анкара, 2б</string>
+    <string name="dasmia_time">Daily 07.00 – 23.00</string>
+    <string name="dasmia_distance">5km</string>
+    <string name="dasmia_price">Годовой от 70000</string>
+    <string name="dasmia_description">Один из самых больших фитнес-клубов в Бишкеке премиального класса,
+        соответствующий мировым стандартам в этом сегменте.
+        Направления:
+        пилатес
+        йога
+        степ-аэробика
+        силовые тренировки
+        функциональные  тренировки
+        бассейн
+        Также есть 4 финские сауны, турецкая парная (хаммам), массаж, зона отдыха с шезлонгами,
+        услуги салона красоты, фитобары, детский фитнес-клуб.</string>
 
+    <string name="world_class_name">World Class</string>
+    <string name="world_class_address">ул. Жукеева-Пудовкина, 87/2</string>
+    <string name="world_class_time">Daily 07.00 – 23.00</string>
+    <string name="world_class_distance">3km</string>
+    <string name="world_class_price">Годовой от 40000</string>
+    <string name="world_class_description">World Class Бишкек – первый клуб знаменитой сети World Class,
+        открытый в столице Кыргызстана. Первый фитнес-клуб премиум-класса оснащен самым современным спортивным оборудованием,
+        а команда тренеров собрана из лучших спортсменов Кыргызстана.</string>
+    <string name="tsum_title">TSUM Cinema</string>
+    <string name="tsum_address">Шопокова, 91</string>
+    <string name="tsum_time">Daily 10.00 – 00.00</string>
+    <string name="tsum_distance">2km</string>
+    <string name="tsum_price">500 сом</string>
+    <string name="tsum_description">В кинотеатре действуют четыре кинозала. Для искушенных киноманов -
+        VIP-зал с раскладывающимися креслами для максимального расслабления. VIP-зал можно забронировать целиком
+        и посмотреть кино только с друзьями или коллегами. Во всех залах установлены сиденья повышенной комфортности.
+        Это создает впечатление, что вы расположились в кресле престижного авто.
+        Кстати, между рядами тоже достаточно места, что позволит спокойно вытянуть ноги, никому не мешая.</string>
+
+    <string name="broadway_description">Кинотеатр Broadway является одним из самых больших мультиплексов в Кыргызстане,
+        где установлен также самый большой парящий серебряный экран. Для зрителей работают семь кинозалов,
+        где ежедневно демонстрируются лучшие хиты мирового и отечественного кинопроката.
+        Для постоянных посетителей кинотеатра действуют различные акции и предложения.
+        Перед сеансом вы также сможете порадовать себя закусками и напитками в кинобаре,
+        а затем отправиться в увлекательный мир приключений на экране.</string>
+    <string name="broadway_title">Broadway</string>
+    <string name="broadway_address">ул. Айтматова, 3</string>
+    <string name="broadway_time">Daily 09.00 - 00.00</string>
+    <string name="broadway_distance">1.5km</string>
+    <string name="broadway_price">500 сом</string>
 </resources>
