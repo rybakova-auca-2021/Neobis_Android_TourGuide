@@ -1,5 +1,6 @@
 package com.example.tourguide
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tourguide.databinding.ActivityMainBinding
@@ -24,9 +25,10 @@ class MainActivity : AppCompatActivity() {
         TabLayoutMediator(tabLayout, viewPager2){tab, position ->
             when(position){
                 0 -> tab.text = "Restaurants"
-                1 -> tab.text = "Gym centers"
+                1 -> tab.text = "Fitness centers"
                 2 -> tab.text = "Cinemas"
             }
+            tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#003C68"));
         }.attach()
     }
 }

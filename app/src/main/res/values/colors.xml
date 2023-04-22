@@ -7,4 +7,5 @@
     <color name="nameOfPlace">#2A8CFF</color>
     <color name="grey">#BABABA</color>
     <color name="address_color">#6B6B6C</color>
+    <color name="tabText">#003C68</color>
 </resources>

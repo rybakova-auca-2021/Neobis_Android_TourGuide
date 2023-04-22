@@ -7,5 +7,7 @@ data class Place(
     val workingTime: String,
     val distance: String,
     val price: String,
-    val description: String
+    val description: String,
+    val location: String,
+    var isExpandable: Boolean = false
 )
