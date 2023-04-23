@@ -1,7 +1,11 @@
 package com.example.tourguide
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
+import android.util.TypedValue
+import android.view.Gravity
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tourguide.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
@@ -10,6 +14,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
+    @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -28,7 +33,13 @@ class MainActivity : AppCompatActivity() {
                 1 -> tab.text = "Fitness centers"
                 2 -> tab.text = "Cinemas"
             }
-            tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#003C68"));
+            val customView = TextView(tabLayout.context).apply {
+                text = tab.text
+                setTextSize(TypedValue.COMPLEX_UNIT_SP, 20f) // set font size to 20sp
+                setTextColor(R.color.black)
+                gravity = Gravity.CENTER
+            }
+            tab.customView = customView
         }.attach()
     }
 }
