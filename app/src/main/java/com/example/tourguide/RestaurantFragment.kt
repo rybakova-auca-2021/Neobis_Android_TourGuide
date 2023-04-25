@@ -1,7 +1,6 @@
 package com.example.tourguide
 
 import android.content.ActivityNotFoundException
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -10,8 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.tourguide.R.*
 import com.example.tourguide.databinding.FragmentRestuarantsBinding
 
 class RestaurantFragment : Fragment(), Adapter.Listener {
@@ -25,11 +25,21 @@ class RestaurantFragment : Fragment(), Adapter.Listener {
         binding = FragmentRestuarantsBinding.inflate(inflater, container, false)
         binding.recyclerViewRestaurant.layoutManager = LinearLayoutManager(requireContext())
         val list = arrayListOf(
-            Place(R.drawable.silla_img, getString(R.string.silla_name), getString(R.string.silla_address), getString(R.string.silla_time), getString(R.string.silla_distance), getString(R.string.silla_price), getString(R.string.silla_description), "70000001020099949"),
-            Place(R.drawable.zerno_img, getString(R.string.zerno_name), getString(R.string.zerno_address), getString(R.string.zerno_time), getString(R.string.zerno_distance), getString(R.string.zerno_price), getString(R.string.zerno_description), "70000001057692093"),
-            Place(R.drawable.turkuaz_img, getString(R.string.turkuaz_name), getString(R.string.turkuaz_address), getString(R.string.turkuaz_time), getString(R.string.turkuaz_distance), getString(R.string.turkuaz_price), getString(R.string.turkuaz_description), "70000001063233370"),
-            Place(R.drawable.bruno, getString(R.string.bruno_name), getString(R.string.bruno_address), getString(R.string.bruno_time), getString(R.string.bruno_distance), getString(R.string.bruno_price), getString(R.string.bruno_description), "70000001042522057"),
-            Place(R.drawable.iwa_img, getString(R.string.iwa_name), getString(R.string.iwa_address), getString(R.string.iwa_time), getString(R.string.iwa_distance), getString(R.string.iwa_price), getString(R.string.iwa_description), "70000001042571832")
+            Place(drawable.silla_img, getString(string.silla_name), getString(string.silla_address), getString(
+                    string.silla_time), getString(string.silla_distance), getString(string.silla_price), getString(
+                    string.silla_description), getString(string.silla_info) ,getString(string.silla_location)),
+            Place(drawable.zerno_img, getString(string.zerno_name), getString(string.zerno_address), getString(
+                    string.zerno_time), getString(string.zerno_distance), getString(string.zerno_price), getString(
+                    string.zerno_description), getString(string.zerno_info),getString(string.zerno_location)),
+            Place(drawable.turkuaz_img, getString(string.turkuaz_name), getString(string.turkuaz_address), getString(
+                    string.turkuaz_time), getString(string.turkuaz_distance), getString(string.turkuaz_price), getString(
+                    string.turkuaz_description), getString(string.turkuaz_info),getString(string.turkuaz_location)),
+            Place(drawable.bruno, getString(string.bruno_name), getString(string.bruno_address), getString(
+                    string.bruno_time), getString(string.bruno_distance), getString(string.bruno_price), getString(
+                    string.bruno_description), getString(string.bruno_info),getString(string.bruno_location)),
+            Place(drawable.iwa_img, getString(string.iwa_name), getString(string.iwa_address), getString(
+                    string.iwa_time), getString(string.iwa_distance), getString(string.iwa_price), getString(
+                    string.iwa_description), getString(string.iwa_info),getString(string.iwa_location))
         )
         binding.recyclerViewRestaurant.adapter = Adapter(list, this)
         return binding.root
@@ -37,10 +47,17 @@ class RestaurantFragment : Fragment(), Adapter.Listener {
     override fun openMap(location: String) {
         try {
             val uri = Uri.parse("geo: $location")
-            val mapIntent = Intent(Intent.ACTION_VIEW, uri).apply { setPackage("com.google.android.apps.maps") }
-            startActivity(mapIntent)
+            val mapIntent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(Intent.createChooser(mapIntent, "Choose app"))
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(activity, "Map is not installed", Toast.LENGTH_SHORT)
         }
     }
+
+    override fun navigateToFragment(place: Place) {
+        val bundle = Bundle()
+        bundle.putParcelable("place", place)
+        findNavController().navigate(R.id.navigateToDetailFragment, bundle)
+    }
+
 }

@@ -122,4 +122,33 @@
     <string name="broadway_time">Daily 09.00 - 00.00</string>
     <string name="broadway_distance">1.5km</string>
     <string name="broadway_price">500 сом</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dasmia_location">70000001035856292</string>
+    <string name="world_class_location">70000001026011392</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cinema_tsum">Кинотеатр  TSUM Cinema</string>
+    <string name="cinema_broadway">Кинотеатр Broadway</string>
+    <string name="tsum_location">70000001040950307</string>
+    <string name="broadway_location">70000001029043839</string>
+    <string name="dasmia_info">Спортивный зал Dasmia</string>
+    <string name="world_class_info">Спортивный зал World Class</string>
+    <string name="silla_info">Ресторан корейской кухни</string>
+    <string name="zerno_info">Ресторан, кофейня, лавка</string>
+    <string name="turkuaz_info">Ресторан турецкой кухни</string>
+    <string name="bruno_info"><![CDATA[Coffee & Tea Room]]></string>
+    <string name="iwa_info">Ресторан на крыше</string>
+    <string name="silla_location">70000001020099949</string>
+    <string name="zerno_location">70000001057692093</string>
+    <string name="turkuaz_location">70000001063233370</string>
+    <string name="bruno_location">70000001042522057</string>
+    <string name="iwa_location">70000001042571832</string>
+    <string name="address">Address</string>
+    <string name="title">Title</string>
+    <string name="working_time">Working Time</string>
+    <string name="distance_detail">Distance</string>
+    <string name="average_check">Average Check</string>
+    <string name="additional_information">Additional Information</string>
+    <string name="description">Description</string>
 </resources>

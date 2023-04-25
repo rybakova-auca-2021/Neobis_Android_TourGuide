@@ -9,10 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tourguide.databinding.FragmentCinemasBinding
-import com.example.tourguide.databinding.FragmentFitnessCenterBinding
-import com.example.tourguide.databinding.FragmentRestuarantsBinding
 
 class CinemaFragment : Fragment(), Adapter.Listener {
 
@@ -27,10 +26,11 @@ class CinemaFragment : Fragment(), Adapter.Listener {
         val list = arrayListOf(
             Place(R.drawable.tsum, getString(R.string.tsum_title), getString(R.string.tsum_address), getString(
                 R.string.tsum_time), getString(R.string.tsum_distance), getString(R.string.tsum_price),
-                getString(R.string.tsum_description), "70000001040950307"),
+                getString(R.string.tsum_description), getString(R.string.cinema_tsum),getString(R.string.tsum_location)),
             Place(R.drawable.broadway, getString(R.string.broadway_title), getString(R.string.broadway_address), getString(
                 R.string.broadway_time), getString(R.string.broadway_distance), getString(R.string.broadway_price),
-                getString(R.string.broadway_description), "70000001029043839")
+                getString(R.string.broadway_description), getString(R.string.cinema_broadway),getString(
+                                    R.string.broadway_location))
         )
         binding.recyclerViewCinemas.adapter = Adapter(list, this)
         return binding.root
@@ -38,11 +38,16 @@ class CinemaFragment : Fragment(), Adapter.Listener {
     override fun openMap(location: String) {
         try {
             val uri = Uri.parse("geo: $location")
-            val mapIntent = Intent(Intent.ACTION_VIEW, uri).apply { setPackage("com.google.android.apps.maps") }
-            startActivity(mapIntent)
+            val mapIntent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(Intent.createChooser(mapIntent, "Choose app"))
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(activity, "Map is not installed", Toast.LENGTH_SHORT)
         }
+    }
+    override fun navigateToFragment(place: Place) {
+        val bundle = Bundle()
+        bundle.putParcelable("place", place)
+        findNavController().navigate(R.id.navigateToDetailFragment, bundle)
     }
 
 }

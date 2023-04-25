@@ -1,8 +1,6 @@
 package com.example.tourguide
 
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -23,11 +21,14 @@ class Adapter(
     override fun onBindViewHolder(holder: PlaceViewHolder, position: Int) {
         val place = places[position]
         holder.bind(place)
+        holder.binding.layout.setOnClickListener {
+            listener.navigateToFragment(place)
+        }
     }
 
     override fun getItemCount() = places.size
 
-    inner class PlaceViewHolder(private val binding: CardBinding) :
+    inner class PlaceViewHolder(val binding: CardBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(place: Place) {
@@ -37,18 +38,11 @@ class Adapter(
                 placeAddress.text = place.address
                 placeTime.text = place.workingTime
                 placeDistance.text = place.distance
-                placePrice.text = place.price
+                placePrice.text = place.averageCheck
                 placeDescription.text = place.description
 
                 placeAddress.setOnClickListener {
-                    listener.openMap(place.address)
-                }
-
-                val isExpanded = place.isExpandable
-                detailsLayout.visibility = if (isExpanded) View.VISIBLE else View.GONE
-                layout.setOnClickListener {
-                    place.isExpandable = !isExpanded
-                    notifyItemChanged(adapterPosition)
+                    place.address?.let { it1 -> listener.openMap(it1) }
                 }
             }
         }
@@ -56,5 +50,6 @@ class Adapter(
 
     interface Listener {
         fun openMap(location: String)
+        fun navigateToFragment(place: Place)
     }
 }

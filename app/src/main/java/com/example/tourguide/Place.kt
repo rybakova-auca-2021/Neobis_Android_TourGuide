@@ -1,13 +1,16 @@
 package com.example.tourguide
 
-data class Place(
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+@Parcelize
+class Place(
     val image: Int,
-    val title: String,
-    val address: String,
-    val workingTime: String,
-    val distance: String,
-    val price: String,
-    val description: String,
-    val location: String,
-    var isExpandable: Boolean = false
-)
+    val title: String?,
+    val address: String?,
+    val workingTime: String?,
+    val distance: String?,
+    val averageCheck: String?,
+    val description: String?,
+    val additionalInformation: String,
+    private val location: String?
+) : Parcelable

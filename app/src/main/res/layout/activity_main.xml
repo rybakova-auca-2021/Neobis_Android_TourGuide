@@ -7,43 +7,12 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBar"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@color/background">
-
-        <TextView
-            android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@string/bishkek_guide"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_marginTop="20dp"
-            android:fontFamily="sans-serif-medium" />
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text=""
-            android:textSize="40sp"
-            android:background="@color/background"
-            app:tabIndicatorColor="@color/black"
-            app:tabMode="scrollable"
-            app:tabTextColor="@color/black" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/fragment_holder"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="8dp"
-        android:background="@color/white"/>
-
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation">
+    </androidx.fragment.app.FragmentContainerView>
 </LinearLayout>
