@@ -27,19 +27,24 @@ class RestaurantFragment : Fragment(), Adapter.Listener {
         val list = arrayListOf(
             Place(drawable.silla_img, getString(string.silla_name), getString(string.silla_address), getString(
                     string.silla_time), getString(string.silla_distance), getString(string.silla_price), getString(
-                    string.silla_description), getString(string.silla_info) ,getString(string.silla_location)),
+                    string.silla_description), getString(string.silla_info) ,getString(string.silla_location), getString(
+                                    string.silla_contaact)),
             Place(drawable.zerno_img, getString(string.zerno_name), getString(string.zerno_address), getString(
                     string.zerno_time), getString(string.zerno_distance), getString(string.zerno_price), getString(
-                    string.zerno_description), getString(string.zerno_info),getString(string.zerno_location)),
+                    string.zerno_description), getString(string.zerno_info),getString(string.zerno_location), getString(
+                                    string.zerno_contact)),
             Place(drawable.turkuaz_img, getString(string.turkuaz_name), getString(string.turkuaz_address), getString(
                     string.turkuaz_time), getString(string.turkuaz_distance), getString(string.turkuaz_price), getString(
-                    string.turkuaz_description), getString(string.turkuaz_info),getString(string.turkuaz_location)),
+                    string.turkuaz_description), getString(string.turkuaz_info),getString(string.turkuaz_location), getString(
+                                    string.turkuaz_contact)),
             Place(drawable.bruno, getString(string.bruno_name), getString(string.bruno_address), getString(
                     string.bruno_time), getString(string.bruno_distance), getString(string.bruno_price), getString(
-                    string.bruno_description), getString(string.bruno_info),getString(string.bruno_location)),
+                    string.bruno_description), getString(string.bruno_info),getString(string.bruno_location), getString(
+                                    string.bruno_contact)),
             Place(drawable.iwa_img, getString(string.iwa_name), getString(string.iwa_address), getString(
                     string.iwa_time), getString(string.iwa_distance), getString(string.iwa_price), getString(
-                    string.iwa_description), getString(string.iwa_info),getString(string.iwa_location))
+                    string.iwa_description), getString(string.iwa_info),getString(string.iwa_location), getString(
+                                    string.iwa_contact))
         )
         binding.recyclerViewRestaurant.adapter = Adapter(list, this)
         return binding.root

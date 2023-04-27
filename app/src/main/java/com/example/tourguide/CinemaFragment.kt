@@ -26,11 +26,12 @@ class CinemaFragment : Fragment(), Adapter.Listener {
         val list = arrayListOf(
             Place(R.drawable.tsum, getString(R.string.tsum_title), getString(R.string.tsum_address), getString(
                 R.string.tsum_time), getString(R.string.tsum_distance), getString(R.string.tsum_price),
-                getString(R.string.tsum_description), getString(R.string.cinema_tsum),getString(R.string.tsum_location)),
+                getString(R.string.tsum_description), getString(R.string.cinema_tsum),getString(R.string.tsum_location), getString(
+                                    R.string.tsum_conatct)),
             Place(R.drawable.broadway, getString(R.string.broadway_title), getString(R.string.broadway_address), getString(
                 R.string.broadway_time), getString(R.string.broadway_distance), getString(R.string.broadway_price),
                 getString(R.string.broadway_description), getString(R.string.cinema_broadway),getString(
-                                    R.string.broadway_location))
+                                    R.string.broadway_location), getString(R.string.broadway_contact))
         )
         binding.recyclerViewCinemas.adapter = Adapter(list, this)
         return binding.root

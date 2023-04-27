@@ -1,5 +1,7 @@
 package com.example.tourguide
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -33,9 +35,19 @@ class DetailFragment : Fragment() {
             detailAverageCheck.text = place?.averageCheck
             detailDescription.text = place?.description
             detailAdditionalInformation.text = place?.additionalInformation
+            Contact.text = place?.contact
         }
         binding.backButton.setOnClickListener {
             findNavController().navigate(R.id.navigateToMainFragment)
         }
+        binding.Contact.setOnClickListener{
+            place?.contact?.let { it1 -> callNumber(it1) }
+        }
+    }
+
+    private fun callNumber(contact: String) {
+        val uri = Uri.parse("tel: $contact")
+        val dialIntent = Intent(Intent.ACTION_DIAL, uri)
+        startActivity(dialIntent)
     }
 }

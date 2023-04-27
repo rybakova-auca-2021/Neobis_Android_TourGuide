@@ -12,5 +12,6 @@ class Place(
     val averageCheck: String?,
     val description: String?,
     val additionalInformation: String,
-    private val location: String?
+    private val location: String?,
+    val contact: String
 ) : Parcelable

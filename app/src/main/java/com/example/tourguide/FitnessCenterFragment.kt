@@ -26,10 +26,12 @@ class FitnessCenterFragment : Fragment(), Adapter.Listener {
         val list = arrayListOf(
             Place(R.drawable.dasmia, getString(R.string.dasmia_name), getString(R.string.dasmia_address),
                 getString(R.string.dasmia_time), getString(R.string.dasmia_distance), getString(R.string.dasmia_price),
-                getString(R.string.dasmia_description),getString(R.string.dasmia_info), getString(R.string.dasmia_location)),
+                getString(R.string.dasmia_description),getString(R.string.dasmia_info), getString(R.string.dasmia_location), getString(
+                                    R.string.dasmia_contact)),
             Place(R.drawable.world_class, getString(R.string.world_class_name), getString(R.string.world_class_address),
                 getString(R.string.world_class_time), getString(R.string.world_class_distance), getString(R.string.world_class_price),
-                getString(R.string.world_class_description), getString(R.string.world_class_info), getString(R.string.world_class_location))
+                getString(R.string.world_class_description), getString(R.string.world_class_info), getString(R.string.world_class_location), getString(
+                                    R.string.world_class_contact))
         )
         binding.recyclerViewFitnessCenter.adapter = Adapter(list, this)
         return binding.root

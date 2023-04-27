@@ -133,6 +133,16 @@
                 app:layout_constraintStart_toStartOf="@+id/detail_additionalInformation"
                 app:layout_constraintTop_toBottomOf="@+id/detail_additionalInformation"
                 tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/Contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:text="Contact"
+                android:textColor="@color/nameOfPlace"
+                app:layout_constraintStart_toStartOf="@+id/detail_description"
+                app:layout_constraintTop_toBottomOf="@+id/detail_description" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
